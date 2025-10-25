@@ -17,8 +17,7 @@ questionBlocks.forEach(function(block){
             
             button.classList.add("selected");
             
-            let answer = button.dataset.answer;
-            UserAnswers.push(answer);
+            UserAnswers[index] = button.dataset.answer;
         });
     });
 });
@@ -30,16 +29,18 @@ function ShowResult() {
 });
 
     let resultText = "";
-    if (UserTotal <= 3) {
-        resultText = "d";
+    if (UserTotal <= 4) {
+        resultText = "Unicorn";
   } else if (UserTotal <= 6) {
-        resultText = "c";
+        resultText = "Dragon";
   } else if (UserTotal <= 9) {
-        resultText = "b";
+        resultText = "Fairy";
   } else {
-        resultText = "a";
+        resultText = "Wizard";
   }
 
+    document.getElementById("result-text").textContent = resultText;
+    document.getElementById("result-container").style.display = "block";
 };
 let show_result = document.getElementById("show-result");
 show_result.addEventListener("click", ShowResult);

@@ -17,7 +17,7 @@ questionBlocks.forEach(function(block){
             
             button.classList.add("selected");
             
-            UserAnswers[index] = button.dataset.answer;
+            UserAnswers[i] = button.dataset.answer;
         });
     });
 });
